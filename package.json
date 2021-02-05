@@ -7,6 +7,11 @@
   },
   "dependencies": {
     "@hapi/iron": "6.0.0",
+    "@tensorflow-models/facemesh": "^0.0.5",
+    "@tensorflow-models/knn-classifier": "^1.2.2",
+    "@tensorflow-models/mobilenet": "^2.0.4",
+    "@tensorflow/tfjs": "^3.0.0",
+    "@tensorflow/tfjs-node": "^3.0.0",
     "cookie": "0.4.1",
     "next": "latest",
     "next-connect": "0.8.1",
@@ -14,6 +19,7 @@
     "passport-local": "1.0.0",
     "react": "latest",
     "react-dom": "latest",
+    "redis": "^3.0.2",
     "swr": "0.3.0",
     "uuid": "8.3.1"
   },
