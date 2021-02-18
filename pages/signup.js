@@ -48,7 +48,7 @@ const Signup = () => {
       </div>
       <style jsx>{`
         .login {
-          max-width: 21rem;
+          max-width: 22rem;
           margin: 0 auto;
           padding: 1rem;
           border: 1px solid #ccc;

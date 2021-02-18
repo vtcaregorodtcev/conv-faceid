@@ -2,6 +2,7 @@ import passport from 'passport'
 import nextConnect from 'next-connect'
 import { localStrategy } from '../../lib/password-local'
 import { setLoginSession } from '../../lib/auth'
+import { predictUser } from '../../lib/predict-user';
 
 const authenticate = (method, req, res) =>
   new Promise((resolve, reject) => {
@@ -21,6 +22,13 @@ export default nextConnect()
   .post(async (req, res) => {
     try {
       const user = await authenticate('local', req, res)
+
+      let predicted = true;
+      if (user)
+        predicted = await predictUser(user.username, req.body.image);
+
+      if (!predicted) throw new Error('We didn\'t recognize you...');
+
       // session is the payload to save in the token, it may contain basic info about the user
       const session = { ...user }
 
