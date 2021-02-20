@@ -24,7 +24,7 @@ export default nextConnect()
       const user = await authenticate('local', req, res)
 
       let predicted = true;
-      if (user)
+      if (user && user.tfaEnabled)
         predicted = await predictUser(user.username, req.body.image);
 
       if (!predicted) throw new Error('We didn\'t recognize you...');

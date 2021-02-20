@@ -13,6 +13,7 @@ const Login = () => {
 
   const {
     trainingSet,
+    seTrainingSet,
     allowVideo,
     captureImage,
   } = useTfInBrowser();
@@ -23,6 +24,7 @@ const Login = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    seTrainingSet(() => []);
 
     if (errorMsg) return setErrorMsg('');
 
